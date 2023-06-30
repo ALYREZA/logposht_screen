@@ -4,6 +4,7 @@ import StimulusControllerResolver, { createViteGlobResolver } from 'stimulus-con
 
 const application = Application.start()
 
+
 StimulusControllerResolver.install(application, createViteGlobResolver(
   import.meta.glob('./controllers/**/*_controller.ts')
 ))
