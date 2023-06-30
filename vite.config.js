@@ -13,6 +13,7 @@ export default defineConfig({
     open: true,
   },
   root: 'src',
+  base:'/logposht_screen/',
   publicDir: '../public',
   build: {
     outDir: '../dist',
