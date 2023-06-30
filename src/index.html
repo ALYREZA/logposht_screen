@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logposht</title>
+  </head>
+  <body class="h-screen w-full overflow-y-hidden">
+    <div class="h-2/6 relative items-center justify-center flex flex-col bg-white" data-controller="hello" data-hello-url-value='{"e":"12"}'>
+        <h1 class="text-4xl z-10 select-none" data-hello-target="result"></h1>
+        <small class="text-sm z-10 select-none text-red-400">- 200,000</small>
+        <canvas class="absolute z-0 w-full h-full"></canvas>      
+    </div>
+    <div class="h-1/6 flex flex-row">
+      <div class="h-full w-1/2 bg-fuchsia-200"></div>
+      <div class="h-full w-1/2 bg-lime-400"></div>
+    </div>
+    <div class="h-1/6 bg-yellow-300"></div>
+    <div class="h-1/6 bg-orange-300"></div>
+    <div class="h-1/6 flex flex-row">
+      <div class="h-full w-1/2 bg-cyan-300"></div>
+      <div class="h-full w-1/2 bg-violet-300"></div>
+    </div>
+    <script type="text/javascript">
+      var customViewportCorrectionVariable = 'vh';
+      function setViewportProperty(doc) {
+        var prevClientHeight;
+        var customVar = '--' + ( customViewportCorrectionVariable || 'vh' );
+        function handleResize() {
+          var clientHeight = doc.clientHeight;
+          if (clientHeight === prevClientHeight) return;
+          requestAnimationFrame(function updateViewportHeight(){
+            doc.style.setProperty(customVar, (clientHeight * 0.01) + 'px');
+            prevClientHeight = clientHeight;
+          });
+        }
+        handleResize();
+        return handleResize;
+      }
+      window.addEventListener('resize', setViewportProperty(document.documentElement));
+    </script>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
