@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/d3": "^7.4.0",
     "@types/flickity": "^2.2.7",
+    "@types/lodash": "^4.14.195",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
@@ -20,7 +21,9 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
+    "bignumber.js": "^9.1.1",
     "d3": "^7.8.4",
+    "lodash": "^4.17.21",
     "postcss-viewport-height-correction": "^1.1.1",
     "stimulus-controller-resolver": "^3.1.0"
   }

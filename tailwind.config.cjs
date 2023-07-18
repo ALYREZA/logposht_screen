@@ -2,11 +2,33 @@
 module.exports = {
   content: [
     "./src/index.html",
-    "./src/**/*.ts",
+    "./src/controllers/*.ts",
+  ],
+  safelist: [
+    'h-screen', 'w-full', 'flex', 'justify-center', 'items-center', 'bg-red-500',
+    'hidden'
   ],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
+    extend: {
+      animation: {
+        'gradient-y': 'gradient-y 1s ease-in-out infinite',
+      },
+      keyframes: {
+        'gradient-y': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center',
+          },
+          '50%': {
+            'background-size': '100% 100%',
+            'background-position': 'center center',
+
+          },
+        },
+      },
+    },
     screens: {
       'xs': {'min': '320px', 'max': '639px'},
       'sm': {'min': '640px', 'max': '767px'},
@@ -664,6 +686,7 @@ module.exports = {
     minHeight: {
       0: '0px',
       full: '100%',
+      '1/2': '50%',
       screen: '100vh',
       min: 'min-content',
       max: 'max-content',
@@ -672,6 +695,7 @@ module.exports = {
     minWidth: {
       0: '0px',
       full: '100%',
+      '1/2': '50%',
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
