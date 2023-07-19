@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import { normalizeLogposht } from "../helpers/dataSource";
 
 class BodyController extends Controller {
     [x: string]: any

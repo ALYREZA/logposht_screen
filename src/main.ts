@@ -1,6 +1,6 @@
 import "./style.css";
-import { Application } from "@hotwired/stimulus"
-import StimulusControllerResolver, { createViteGlobResolver } from 'stimulus-controller-resolver'
+import { Application } from "@hotwired/stimulus";
+import StimulusControllerResolver, { createViteGlobResolver } from 'stimulus-controller-resolver';
 
 const application = Application.start()
 

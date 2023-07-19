@@ -1,11 +1,10 @@
 import { currentMonth, currentYear } from "./date";
 import { filter, group, percentage, sum } from "./utility";
-import { subtract } from "lodash"
+import subtract  from "lodash/subtract"
 
-const normalizeLogposht = JSON.parse(window?.logposht || "{}");
+const normalizeLogposht = JSON.parse(window?.logposht || "[]");
 
 const allLogposhtFilter = filter(normalizeLogposht)
-
 const allValueLogposht = sum('value')
 
 
@@ -48,6 +47,7 @@ const currentMonthGroup = group(currentMonthWithdraw)
 const groupedOnCategory = currentMonthGroup('category')
 
 export {
+    normalizeLogposht,
     totalWithdraw,
     totalDeposit,
     currentMonthData,

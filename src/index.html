@@ -2,18 +2,17 @@
 <html lang="fa">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"/>
     <title>Logposht</title>
   </head>
-  <body class="h-screen w-screen relative bg-red-50" data-controller="body">
+  <body class="h-screen w-screen relative bg-slate-100" data-controller="body">
     <div data-body-loaded-class="hidden" data-body-loading-class="h-screen w-full flex justify-center items-center bg-red-500" data-body-target="backdrop"></div>
-    <div class="h-2/6 z-0 bg-gradient-to-t via-slate-100 from-slate-300 text-green-900 animate-gradient-y relative items-center justify-center flex flex-col" data-controller="main">
+    <div class="h-2/6 z-0 bg-gradient-to-t to-red-400 via-slate-100 from-slate-100 text-green-900 animate-gradient-y relative items-center justify-center flex flex-col" data-controller="main">
         <h1 data-action='click->main#changeMe' class="text-6xl z-10 select-none" data-main-target="result"></h1>
         <canvas class="absolute z-0 w-full h-full"></canvas>      
     </div>
     <div class="h-2/6 flex flex-1 flex-wrap overflow-x-scroll flex-col z-10" data-controller="withdraw"></div>
     <div class="h-2/6 flex flex-row justify-evenly items-center" data-controller="bank"></div>
-    
     <script type="text/javascript">
       var customViewportCorrectionVariable = 'vh';
       function setViewportProperty(doc) {
@@ -31,9 +30,6 @@
         return handleResize;
       }
       window.addEventListener('resize', setViewportProperty(document.documentElement));
-       var normalizeLogposhtSize = JSON.parse(window?.mobile || "{}");
-        var bdy = document.getElementsByTagName("body");
-        bdy.style.width = normalizeLogposhtSize?.width+"px";
     </script>
     <script type="module" src="./main.ts"></script>
   </body>

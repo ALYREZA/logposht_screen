@@ -1,4 +1,8 @@
-import { curry, map as _map, sumBy, groupBy, Dictionary } from "lodash"
+import curry from "lodash/curry"
+import _map from "lodash/map"
+import sumBy from "lodash/sumBy"
+import groupBy from "lodash/groupBy"
+import type {Dictionary } from "lodash"
 import type{ ILogposht } from "../@types/logposht";
 import BigNumber from "bignumber.js";
 
