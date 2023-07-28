@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/index.html",
-    "./src/controllers/*.ts",
+    "./src/components/**/*.tsx",
   ],
   safelist: [
     'h-screen', 'w-full', 'flex', 'justify-center', 'items-center', 'bg-red-500',

@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
-import StimulusHMR from 'vite-plugin-stimulus-hmr'
+import preact from '@preact/preset-vite'
 
 export default defineConfig({
   plugins: [
-    StimulusHMR(),
+    preact(),
   ],
   preview: {
     open: true,

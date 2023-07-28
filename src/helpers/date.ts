@@ -1,7 +1,7 @@
 const now = new Date()
 const currentMonth = parseInt(new Intl.DateTimeFormat('en-US-u-ca-persian', {month: '2-digit'}).format(now));
 const currentDay = parseInt(new Intl.DateTimeFormat('en-US-u-ca-persian', {day: '2-digit'}).format(now));
-const currentYear = parseInt(new Intl.DateTimeFormat('en-US-u-ca-persian', {year: '2-digit'}).format(now));
+const currentYear = parseInt(new Intl.DateTimeFormat('en-US-u-ca-persian', {year: 'numeric'}).format(now));
 
 const lastMonthDate = (currMonth: number,currYear: number) => {
     let lastMonth = currMonth - 1;
