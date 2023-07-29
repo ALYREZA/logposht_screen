@@ -3,7 +3,7 @@ import useMainData from "../hooks/useMainData";
 import Main from "./main";
 import Withdraw from "./withdraw";
 
-type IndexType = {logposht:ILogposht[] }
+type IndexType = { logposht: { value: ILogposht[] } }
 
 const Index = ({ logposht }: IndexType) => {
 

@@ -1,86 +1,88 @@
-const withdrawOptions = {
+import { mdiFood, mdiHome, mdiHanger, mdiFlower, mdiControllerClassic, mdiPartyPopper, mdiTrafficLight, mdiHammerWrench, mdiSeat, mdiGift, mdiCar, mdiCash, mdiAccountTie, mdiBottleTonicPlus } from '@mdi/js';
+type withdrawOptions = {[key: string]: any}
+const withdrawOptions:withdrawOptions = {
     housing:{
         "name": "مسکن",
         "description": "اجاره، شارژ",
-        "icon": "home",
+        "icon": mdiHome,
         "tag": "housing"
     },
     food:{
         "name": "خوراک",
         "description": "گوشت،نان،مرغ،برنج،لبنیات ،میوه",
-        "icon": "food",
+        "icon": mdiFood,
         "tag": "food"
     },
    clothing: {
         "name": "پوشاک",
         "description": "شلوار، جوراب،کیف، کفش",
-        "icon": "hanger",
+        "icon": mdiHanger,
         "tag": "clothing"
     },
    cosmetic: {
         "name": "آرایشی بهداشتی",
         "description": "عطر، دستمال،مایع ظرفشویی",
-        "icon": "flower",
+        "icon": mdiFlower,
         "tag": "cosmetic"
     },
     recreation :{
         "name": "تفریح",
         "description": "سینما،پارک،کافه،رستوران یا مسافرت",
-        "icon": "controller-classic",
+        "icon": mdiControllerClassic,
         "tag": "recreation"
     },
     party:{
         "name": "مهمانی",
         "description": "تولد فرزند،دورهمی،پاگشایی،افطاری",
-        "icon": "party-popper",
+        "icon": mdiPartyPopper,
         "tag": "party"
     },
     commuting:{
         "name": "رفت و آمد",
         "description": "کرایه،تاکسی اینترنتی،اتوبوس،مترو",
-        "icon": "traffic-light",
+        "icon": mdiTrafficLight,
         "tag": "commuting"
     },
     services: {
         "name": "خدمات",
         "description": "آب،برق، گاز،تلفن، تلفن همراه،اینترنت",
-        "icon": "hammer-wrench",
+        "icon": mdiHammerWrench,
         "tag": "services"
     },
     treatment: {
         "name": "درمان",
         "description": "ویزیت،دارو، آزمایش",
-        "icon": "bottle-tonic-plus",
+        "icon": mdiBottleTonicPlus,
         "tag": "treatment"
     },
     home_appliances: {
         "name": "لوازم خانه",
         "description": "تعمیر لباسشویی،میز،لامپ،قابلمه،اسباب بازی",
-        "icon": "seat",
+        "icon": mdiSeat,
         "tag": "home_appliances"
     },
     gift: {
         "name": "هدیه",
         "description": "چشم روشنی،ازدواج، تولدها،روز مادر یا پدر",
-        "icon": "gift",
+        "icon": mdiGift,
         "tag": "gift"
     },
     car:{
         "name": "خودرو",
         "description": "بنزین، تعمیر و تعویض روغن،جریمه،بیمه",
-        "icon": "car",
+        "icon": mdiCar,
         "tag": "car"
     },
     debt:{
         "name": "بدهی",
         "description": "اقساط وام، بدهی های شخصی",
-        "icon": "cash",
+        "icon": mdiCash,
         "tag": "debt"
     },
     personal_growth:{
         "name": "رشد فردی",
         "description": "کتاب، کلاسی های ورزشی یا آموزشی، شهریه مدرسه",
-        "icon": "account-tie",
+        "icon": mdiAccountTie,
         "tag": "personal_growth"
     }
 };

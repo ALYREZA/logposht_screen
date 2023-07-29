@@ -1,5 +1,5 @@
 import { useCallback, useState } from "preact/hooks";
-import { memo } from "preact/compat"
+import BigNumber from "bignumber.js";
 type MainType = {data?: number, percentage?: string}
 
 const Main = ({ data = 0, percentage = '' }:MainType) => {
@@ -9,9 +9,9 @@ const Main = ({ data = 0, percentage = '' }:MainType) => {
         setToggle((c) => !c)
     },[toggle])
 
-    return (<div onClick={changeToggle} className={'flex w-full bg-red-500 text-white items-center justify-center'}><p className={'text-7xl'}>{toggle ? percentage : data}</p></div>);
+    return (<div onClick={changeToggle} className={'flex w-full select-none bg-slate-600 py-9 text-white items-center justify-center'}><p className={'text-7xl'}>{toggle ? percentage : BigNumber(data).toFormat()}</p></div>);
 }
 
 
 
-export default memo(Main);
+export default Main;

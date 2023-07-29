@@ -3,9 +3,11 @@ import type { ILogposht } from "../@types/logposht";
 import { currentMonth, currentYear } from "../helpers/date";
 import { filter, group, percentage, sum } from "../helpers/utility";
 
-const useMainData = (logposht: ILogposht[]) => {
+type useMainDataType = {value: ILogposht[]}
+
+const useMainData = (logposht: useMainDataType) => {
     
-    const allLogposhtFilter = filter(logposht)
+    const allLogposhtFilter = filter(logposht.value)
     const allValueLogposht = sum('value');
     const currentMonthData = allLogposhtFilter((item) => item.jMonth === currentMonth && item.jYear === currentYear)
     
