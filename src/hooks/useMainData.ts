@@ -29,7 +29,19 @@ const useMainData = (logposht: useMainDataType) => {
 
     const groupedOnCategory = currentMonthGroup('category')
 
-    return { percentageDeposit,totalWithdraw, currentMonthBalance,groupedOnCategory }
+
+    const currentMonthDepositFilter = filter(currentMonthDeposit);
+
+    const getCurrentMonthBank = currentMonthDepositFilter((item) => item.category === 'savings_fund')
+    const getCurrentMonthPiggyBank = currentMonthDepositFilter((item) => item.category === 'piggy-bank')
+    const getCurrentMonthHelping = currentMonthDepositFilter((item) => item.category === 'helping_fund')
+
+    const getCurrentMonthBankValues = allValueLogposht(getCurrentMonthBank);
+    const getCurrentMonthPiggyBankValues = allValueLogposht(getCurrentMonthPiggyBank);
+    const getCurrentMonthHelpingValues = allValueLogposht(getCurrentMonthHelping);
+
+    
+    return { percentageDeposit,totalWithdraw, currentMonthBalance,groupedOnCategory,getCurrentMonthBankValues,getCurrentMonthPiggyBankValues,getCurrentMonthHelpingValues,getDepositValues }
 
 }
 

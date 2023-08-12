@@ -28,6 +28,6 @@ const group = curry(function (ary: ILogposht[], path: string): GroupResult {
 
 const thousandSeparator = (number: string|number) => BigNumber(number).toFormat();
 
-const percentage = curry(function (total: number, amount: number): string { return BigNumber(amount).dividedBy(total).multipliedBy(100).toFixed(0) + "%" } )
+const percentage = curry(function (total: number, amount: number): string { return parseFloat(BigNumber(amount).dividedBy(total).multipliedBy(100).toFixed(1)) + "%" } )
 
 export { filter,map,sum, thousandSeparator,percentage, group}
