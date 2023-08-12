@@ -6,7 +6,9 @@ import { percentage } from "../../helpers/utility";
 
 type WithdrawItemType = {totalDeposit: number,sumValue: number, title: string, clickedOn: (id: HTMLDivElement| null) => void}
 
-const Small = ({ icon, value, totalDeposit }) => (
+type SmallType = {icon: string, value: number,totalDeposit: number }
+type BigType = {value: number, title: string}
+const Small = ({ icon, value, totalDeposit }:SmallType) => (
         <>
             <div className={'flex flex-row'}>
                 <Icon className={'text-gray-600'} path={withdrawOptions[icon].icon} size={1} />
@@ -18,7 +20,7 @@ const Small = ({ icon, value, totalDeposit }) => (
     )
 
 
-const Big = ({value, title}) => (
+const Big = ({value, title}: BigType) => (
     <div className={'h-full flex flex-1 flex-col items-center justify-between'}>
         <h1 className={'text-2xl text-center'}>{withdrawOptions[title].name}</h1>
         <h2 className={'text-6xl text-center'}>{BigNumber(value).toFormat()}</h2>
