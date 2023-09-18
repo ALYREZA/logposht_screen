@@ -9,8 +9,6 @@ import { signal } from "@preact/signals";
 const logposhtSignal = signal(JSON.parse(window?.logposht || '{}'));
 
 function App({ logposht }: AppType) {
-  return (
-      <Index logposht={logposht} />
-  );
+  return (<Index logposht={logposht} />);
 }
 render(<App logposht={logposhtSignal} />, document.getElementById('app')!)

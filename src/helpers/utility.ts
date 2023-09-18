@@ -2,6 +2,8 @@ import curry from "lodash/curry"
 import _map from "lodash/map"
 import sumBy from "lodash/sumBy"
 import groupBy from "lodash/groupBy"
+import isNaN from "lodash/isNaN"
+import isFinite from "lodash/isFinite"
 import type {Dictionary } from "lodash"
 import type{ ILogposht } from "../@types/logposht";
 import BigNumber from "bignumber.js";
@@ -28,6 +30,11 @@ const group = curry(function (ary: ILogposht[], path: string): GroupResult {
 
 const thousandSeparator = (number: string|number) => BigNumber(number).toFormat();
 
-const percentage = curry(function (total: number, amount: number): string { return parseFloat(BigNumber(amount).dividedBy(total).multipliedBy(100).toFixed(1)) + "%" } )
+const percentage = curry(function (total: number, amount: number): string {
+    const percentage = parseFloat(BigNumber(amount).dividedBy(total).multipliedBy(100).toFixed(1));
+    const finite = isFinite(percentage) ? percentage + "%" : "O:"
+    const result = isNaN(percentage) ? ":(" :  finite
+    return result
+})
 
 export { filter,map,sum, thousandSeparator,percentage, group}

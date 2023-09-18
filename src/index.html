@@ -7,7 +7,6 @@
   </head>
   <body class="h-screen w-screen relative bg-slate-50">
     <div class="flex flex-1" id="app"></div>
-    <script type="module" src="./main.tsx"></script>
     <script type="text/javascript">
       var customViewportCorrectionVariable = 'vh';
       function setViewportProperty(doc) {
@@ -26,5 +25,6 @@
       }
       window.addEventListener('resize', setViewportProperty(document.documentElement));
     </script>
+    <script type="module" src="./main.tsx"></script>
   </body>
 </html>

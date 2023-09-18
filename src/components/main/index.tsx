@@ -9,9 +9,10 @@ const Main = ({ data = 0, percentage = '' }:MainType) => {
         setToggle((c) => !c)
     },[])
 
+    const onToggle = toggle ? percentage : BigNumber(data).toFormat();
     return (
         <div onClick={changeToggle} className={'flex flex-1 w-full select-none py-9 text-black items-center justify-center'}>
-            <p className={'text-7xl'}>{toggle ? percentage : BigNumber(data).toFormat()}</p>
+            <p className={'text-7xl'}>{onToggle}</p>
         </div>
     );
 }
