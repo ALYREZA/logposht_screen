@@ -32,7 +32,7 @@ const thousandSeparator = (number: string|number) => BigNumber(number).toFormat(
 
 const percentage = curry(function (total: number, amount: number): string {
     const percentage = parseFloat(BigNumber(amount).dividedBy(total).multipliedBy(100).toFixed(1));
-    const finite = isFinite(percentage) ? percentage + "%" : "O:"
+    const finite = isFinite(percentage) ? percentage + "%" : BigNumber(amount).abs().toFormat();
     const result = isNaN(percentage) ? ":(" :  finite
     return result
 })
